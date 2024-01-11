@@ -1,5 +1,5 @@
 import pytest
-from madlib_cli.madlib import read_template
+from madlib_cli.madlib import read_template, parse_template
 
 
 def test_read_template_returns_stripped_string():
@@ -8,7 +8,7 @@ def test_read_template_returns_stripped_string():
     assert actual == expected
 
 
-@pytest.mark.skip("pending")
+# @pytest.mark.skip("pending")
 def test_parse_template():
     actual_stripped, actual_parts = parse_template(
         "It was a {Adjective} and {Adjective} {Noun}."
@@ -27,7 +27,7 @@ def test_merge():
     assert actual == expected
 
 
-@pytest.mark.skip("pending")
+# @pytest.mark.skip("pending")
 def test_read_template_raises_exception_with_bad_path():
 
     with pytest.raises(FileNotFoundError):
